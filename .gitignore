@@ -1,0 +1,18 @@
+# Full survey download; the smaller project extract is committed
+data/results.csv
+
+# Jupyter and Python-generated files
+.ipynb_checkpoints/
+__pycache__/
+*.py[cod]
+
+# Local Python environments
+.venv/
+venv/
+
+# Temporary notebook execution and rendering outputs
+*.executed.ipynb
+*.html
+
+# Operating-system files
+.DS_Store
