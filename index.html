@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Four lessons about developer compensation from the 2024 Stack Overflow Developer Survey.">
+  <title>Above the Median—But Whose Median?</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172033;
+      --muted: #59657a;
+      --accent: #315f91;
+      --accent-soft: #eef4fa;
+      --line: #dce3eb;
+      --paper: #ffffff;
+      --page: #f5f7fa;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--page);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    main {
+      width: min(960px, calc(100% - 32px));
+      margin: 40px auto;
+      padding: clamp(28px, 6vw, 64px);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: 0 16px 50px rgba(23, 32, 51, 0.08);
+    }
+
+    h1,
+    h2 {
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+    }
+
+    h1 {
+      max-width: 780px;
+      margin: 0 0 20px;
+      font-size: clamp(2.3rem, 6vw, 4.6rem);
+    }
+
+    h2 {
+      margin: 56px 0 16px;
+      font-size: clamp(1.45rem, 3vw, 2rem);
+    }
+
+    p {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .dek {
+      margin-bottom: 34px;
+      color: var(--muted);
+      font-size: 1.18rem;
+    }
+
+    figure {
+      margin: 34px 0;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+
+    figcaption {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .answer {
+      padding: 18px 22px;
+      background: var(--accent-soft);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin: 24px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.96rem;
+    }
+
+    th,
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+    }
+
+    th {
+      background: var(--accent-soft);
+    }
+
+    td:nth-child(2),
+    td:nth-child(3) {
+      text-align: right;
+    }
+
+    footer {
+      margin-top: 58px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    @media (max-width: 600px) {
+      main {
+        width: 100%;
+        margin: 0;
+        border: 0;
+        border-radius: 0;
+      }
+
+      body {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <article>
+      <header>
+        <p class="eyebrow">2024 Stack Overflow Developer Survey</p>
+        <h1>Above the Median—But Whose Median?</h1>
+        <p class="dek">Four lessons about what six reported characteristics can—and cannot—tell us about developer compensation.</p>
+      </header>
+
+      <figure>
+        <img src="images/country_median_comparison.png" alt="Training compensation medians for the ten countries with the largest eligible samples">
+        <figcaption>Training-sample annual compensation medians in U.S. dollars.</figcaption>
+      </figure>
+
+      <p>I studied 23,435 respondents with usable annual compensation. “Above the median” means strictly above the training sample's worldwide cutoff of $65,000—not above an industry standard or a measure of career success.</p>
+
+      <h2>1. Which characteristics mattered most?</h2>
+      <p class="answer">Country of residence dominated. Shuffling country reduced the model's ranking score by 0.2647, compared with 0.0579 for professional coding experience, the second-ranked field.</p>
+      <p>Role, work arrangement, organization size, and education had smaller effects. These are patterns the model used, not proof that changing any characteristic causes pay to change.</p>
+
+      <figure>
+        <img src="images/feature_importance.png" alt="Importance of six survey characteristics in the fitted model">
+        <figcaption>Bars show the average score decrease across ten shuffles; lines show variation.</figcaption>
+      </figure>
+
+      <h2>2. Does the worldwide cutoff mean the same thing everywhere?</h2>
+      <p class="answer">No. The largest training samples ranged from a $142,000 median in the United States to $17,945 in India.</p>
+      <p>Among 3,527 held-out respondents in countries with enough training data, 27.4% switched above/below labels when their country's median replaced the worldwide cutoff. Neither view adjusts for local prices or living costs.</p>
+
+      <h2>3. How accurate was the model on unseen respondents?</h2>
+      <p class="answer">The model correctly classified 82.0% of 4,687 held-out respondents, compared with 49.9% for a baseline that ignored respondent details.</p>
+      <p>It found 79.8% of respondents truly above the cutoff. The errors still matter: 369 below-cutoff respondents were placed above it, while 475 above-cutoff respondents were missed.</p>
+
+      <figure>
+        <img src="images/confusion_matrix.png" alt="Confusion matrix showing correct and incorrect held-out predictions">
+        <figcaption>Each square combines a true and predicted class.</figcaption>
+      </figure>
+
+      <h2>4. What happened in a fictional experience scenario?</h2>
+      <p>Both profiles used the same observed combination: United States, full-stack developer, bachelor's degree, an organization with 100–499 employees, and remote work.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Profile</th>
+              <th>Experience</th>
+              <th>Predicted probability</th>
+              <th>Predicted class</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lower experience</td>
+              <td>4 years</td>
+              <td>92.3%</td>
+              <td>Above cutoff</td>
+            </tr>
+            <tr>
+              <td>Higher experience</td>
+              <td>14 years</td>
+              <td>97.0%</td>
+              <td>Above cutoff</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>The probability rose by 4.8 percentage points, but both profiles stayed in the same class. This comparison is illustrative, not a forecast that ten more years will cause one person's pay to rise.</p>
+
+      <h2>What should readers keep in mind?</h2>
+      <p>The survey was voluntary, compensation was self-reported total pay, and dollar conversion does not capture purchasing power. Results describe eligible respondents, not all developers.</p>
+
+      <footer>
+        <p>Read the <a href="https://github.com/shakeesa/dsnd-blog-post-project/blob/main/stackoverflow_salary_analysis.ipynb">full analysis notebook</a> or visit the <a href="https://github.com/shakeesa/dsnd-blog-post-project">GitHub repository</a> for the method, complete tables, data, and limitations.</p>
+      </footer>
+    </article>
+  </main>
+</body>
+</html>

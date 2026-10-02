@@ -44,6 +44,7 @@ Exact versions are pinned in `requirements.txt`.
 | `requirements.txt` | Pins the six direct Python dependencies. |
 | `stackoverflow_salary_analysis.ipynb` | Contains the complete documented CRISP-DM analysis. |
 | `blog_post.md` | Presents the findings for a general audience. |
+| `index.html` | Publishes the standalone blog through GitHub Pages. |
 | `data/results_project.csv.gz` | Contains all survey rows and the eight fields required by the analysis. |
 | `data/schema.csv` | Contains the official 2024 survey field definitions. |
 | `images/country_median_comparison.png` | Compares training compensation medians for the ten largest country samples. |
@@ -91,7 +92,7 @@ The survey is voluntary and was recruited mainly through Stack Overflow channels
 
 ## Blog post
 
-Read [Above the Median—But Whose Median? Four Lessons from Stack Overflow's 2024 Developer Survey](blog_post.md), or inspect the full [executed analysis notebook](stackoverflow_salary_analysis.ipynb).
+Read the published blog, [Above the Median—But Whose Median? Four Lessons from Stack Overflow's 2024 Developer Survey](https://shakeesa.github.io/dsnd-blog-post-project/), view its [Markdown source](blog_post.md), or inspect the full [executed analysis notebook](stackoverflow_salary_analysis.ipynb).
 
 ## Acknowledgments
 
