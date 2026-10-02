@@ -80,6 +80,10 @@
       margin: 34px 0;
     }
 
+    .hero {
+      margin-top: 28px;
+    }
+
     img {
       display: block;
       width: 100%;
@@ -160,13 +164,12 @@
       <header>
         <p class="eyebrow">2024 Stack Overflow Developer Survey</p>
         <h1>Above the Median—But Whose Median?</h1>
+        <figure class="hero">
+          <img src="images/blog_header.png" alt="Developers examining global compensation patterns on data dashboards">
+          <figcaption>Developer compensation varies across experience, roles, workplaces, and countries.</figcaption>
+        </figure>
         <p class="dek">Four lessons about what six reported characteristics can—and cannot—tell us about developer compensation.</p>
       </header>
-
-      <figure>
-        <img src="images/country_median_comparison.png" alt="Training compensation medians for the ten countries with the largest eligible samples">
-        <figcaption>Training-sample annual compensation medians in U.S. dollars.</figcaption>
-      </figure>
 
       <p>I studied 23,435 respondents with usable annual compensation. “Above the median” means strictly above the training sample's worldwide cutoff of $65,000—not above an industry standard or a measure of career success.</p>
 
@@ -182,6 +185,11 @@
       <h2>2. Does the worldwide cutoff mean the same thing everywhere?</h2>
       <p class="answer">No. The largest training samples ranged from a $142,000 median in the United States to $17,945 in India.</p>
       <p>Among 3,527 held-out respondents in countries with enough training data, 27.4% switched above/below labels when their country's median replaced the worldwide cutoff. Neither view adjusts for local prices or living costs.</p>
+
+      <figure>
+        <img src="images/country_median_comparison.png" alt="Training compensation medians for the ten countries with the largest eligible samples">
+        <figcaption>Training-sample annual compensation medians in U.S. dollars.</figcaption>
+      </figure>
 
       <h2>3. How accurate was the model on unseen respondents?</h2>
       <p class="answer">The model correctly classified 82.0% of 4,687 held-out respondents, compared with 49.9% for a baseline that ignored respondent details.</p>

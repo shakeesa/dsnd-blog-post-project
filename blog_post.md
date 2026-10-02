@@ -1,8 +1,8 @@
 # Above the Median—But Whose Median? Four Lessons from Stack Overflow's 2024 Developer Survey
 
-![Training compensation medians for the ten countries with the largest eligible training samples](images/country_median_comparison.png)
+![Developers examining global compensation patterns on data dashboards](images/blog_header.png)
 
-*Source: author's analysis of the 2024 Stack Overflow Developer Survey; annual compensation in U.S. dollars.*
+*Developer compensation varies across experience, roles, workplaces, and countries.*
 
 What can six reported characteristics tell us about developer compensation? I studied 23,435 respondents with usable annual compensation. “Above the median” means strictly above the training sample's worldwide cutoff of $65,000—not above an industry standard or a measure of career success.
 
@@ -17,6 +17,10 @@ Country of residence dominated. Shuffling country reduced the model's ranking sc
 ## 2. Does the worldwide cutoff mean the same thing everywhere?
 
 No. The largest training samples ranged from a $142,000 median in the United States to $17,945 in India. Among 3,527 held-out respondents in countries with enough training data, 27.4% switched above/below labels when their country's median replaced the worldwide cutoff. Neither view adjusts for local prices or living costs.
+
+![Training compensation medians for the ten countries with the largest eligible training samples](images/country_median_comparison.png)
+
+*Source: author's analysis of the 2024 Stack Overflow Developer Survey; annual compensation in U.S. dollars.*
 
 ## 3. How accurate was the model on unseen respondents?
 

@@ -47,6 +47,7 @@ Exact versions are pinned in `requirements.txt`.
 | `index.html` | Publishes the standalone blog through GitHub Pages. |
 | `data/results_project.csv.gz` | Contains all survey rows and the eight fields required by the analysis. |
 | `data/schema.csv` | Contains the official 2024 survey field definitions. |
+| `images/blog_header.png` | Provides the blog's title illustration. |
 | `images/country_median_comparison.png` | Compares training compensation medians for the ten largest country samples. |
 | `images/feature_importance.png` | Shows held-out permutation importance for all six source fields. |
 | `images/confusion_matrix.png` | Shows the four held-out logistic-regression outcomes. |
@@ -96,4 +97,4 @@ Read the published blog, [Above the Median—But Whose Median? Four Lessons from
 
 ## Acknowledgments
 
-Stack Overflow created and published the 2024 Developer Survey, schema, methodology, and aggregate findings. All figures are the author's analysis of the official 2024 survey data. The project structure and deliverables follow the supplied Udacity data science blog post brief in `instructions.md`.
+Stack Overflow created and published the 2024 Developer Survey, schema, methodology, and aggregate findings. The title illustration was generated with OpenAI's image-generation tool; the three analytical figures are the author's analysis of the official survey data. The project structure and deliverables follow the supplied Udacity data science blog post brief in `instructions.md`.
